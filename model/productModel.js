@@ -33,7 +33,13 @@ const productSchema=new mongoose.Schema({
     sold_quantity:{
         type:Number,
         dafault:0
+    },
+
+    product_image:{
+        type:String,
+        required:true
     }
+
 
 
 },{timestamps:true})

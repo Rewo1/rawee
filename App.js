@@ -4,15 +4,21 @@ require('dotenv').config();
 const db=require('./db/connection')
 const bodyParser=require('body-parser')
 const morgan =require('morgan')
+const expressValidator=require('express-validator')
 const categoryRoute=require('./route/categoryRoute')
 const productRoute=require('./route/productRoute')
+const userRoute=require('./route/userRoute')
 
 
 const app=express()
 
 // middleware
+
+
+
 app.use(bodyParser.json())
 app.use(morgan('dev'))
+app.use(expressValidator())
 
 
 
@@ -20,6 +26,7 @@ app.use(morgan('dev'))
 
 app.use('/api',categoryRoute);
 app.use('/api',productRoute);
+app.use('/api',userRoute);
 
 
 const port=process.env.PORT || 5000
