@@ -8,6 +8,7 @@ const expressValidator=require('express-validator')
 const categoryRoute=require('./route/categoryRoute')
 const productRoute=require('./route/productRoute')
 const userRoute=require('./route/userRoute')
+const cookieParser=require('cookie-parser')
 
 
 const app=express()
@@ -19,6 +20,7 @@ const app=express()
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(expressValidator())
+app.use(cookieParser())
 
 
 
